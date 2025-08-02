@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "parkour_helper",
+	"version": "${version}",
+	"name": "Parkour Helper",
+	"description": "Backwards-compatibility parkour features for map making and playing",
+	"authors": [
+		"olinolívia"
+	],
+	"contact": {
+		"sources": "bleh"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/parkour_helper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"olinolivia.parkour_helper.ParkourHelper"
+		],
+		"client": [
+			"olinolivia.parkour_helper.ParkourHelperClient"
+		]
+	},
+	"mixins": [
+		"parkour_helper.mixins.json",
+		{
+			"config": "parkour_helper.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.8",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

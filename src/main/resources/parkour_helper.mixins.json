@@ -1,0 +1,15 @@
+{
+	"required": true,
+	"package": "olinolivia.parkour_helper.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "PlayerEntityMixin",
+		"LivingEntityMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
