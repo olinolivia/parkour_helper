@@ -100,7 +100,7 @@ public class ParkourSettings extends PersistentState {
                 getCurrent(server)
         );
         ServerPlayerEvents.JOIN.register((player) ->
-            SettingsUpdatedPayload.send(getCurrent(Objects.requireNonNull(player.getServer())), player)
+            SettingsUpdatedPayload.send(getCurrent(Objects.requireNonNull(player.getEntityWorld().getServer())), player)
         );
     }
 

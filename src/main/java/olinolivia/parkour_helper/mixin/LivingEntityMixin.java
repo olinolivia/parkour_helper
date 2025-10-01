@@ -14,13 +14,13 @@ public abstract class LivingEntityMixin {
     @ModifyConstant(method = "tickMovement", constant = @Constant(doubleValue = 0.003))
     private double modifyThreshold(double value) {
         LivingEntity self = (LivingEntity) (Object) this;
-        return (double) ParkourSettings.getDependent.apply(self.getServer(), "movement_snap_threshold");
+        return (double) ParkourSettings.getDependent.apply(self.getEntityWorld().getServer(), "movement_snap_threshold");
     }
 
     @Redirect(method = "applyFluidMovingSpeed", at = @At(value = "INVOKE", target = "Lnet/minecraft/entity/LivingEntity;isSprinting()Z"))
     private boolean modifyWaterFalling(LivingEntity instance) {
         LivingEntity self = (LivingEntity) (Object) this;
-        return self.isSprinting() && (boolean) ParkourSettings.getDependent.apply(self.getServer(), "allow_swimming");
+        return self.isSprinting() && (boolean) ParkourSettings.getDependent.apply(self.getEntityWorld().getServer(), "allow_swimming");
     }
 
 }
